@@ -1,0 +1,55 @@
+@use '../base/functions' as fun;
+@use '../base/mixin' as mix;
+
+.footer{
+    border-top: 2px solid rgba(95, 93, 93, 0.25);
+    &__social{
+        width: 100%;
+        @include mix.flex;
+        gap: 20px;
+        margin: 40px 0;
+        a{
+            width: 45px;
+            height: 45px;
+            padding: 10px;
+            border-radius: 100px;
+            border: 1px solid rgba(95, 93, 93, 0.25);
+            position: relative;
+            overflow: hidden;
+            &::before{
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 0;
+                border-radius: 50% 50% 0 0;
+                background-color: fun.color('primary');
+                bottom: 0;
+                left: 0;
+                z-index: -1;
+                transition: .5s ease height;
+            }
+            &:hover{
+                &:before{
+                    height: 180%;
+                }
+                img{
+                    filter: brightness(1000%);
+                }
+            }
+            img{
+                transition: .1s ease filter;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    &__bottom{
+        @include mix.flex;
+        background-color: fun.color('primary');
+        padding: 10px 0;
+        p{
+            font-size: 1.5rem;
+            color: fun.color('white');
+        }
+    }
+}

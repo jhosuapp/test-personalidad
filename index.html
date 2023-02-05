@@ -38,9 +38,12 @@
         <h2>¡Bienvenida al test!</h1>
       </article>
     </section>
-
+    <!--PAGINADOR-->
+    <section class="pagination block-ctm">
+      <p>página <b id="actual-page"></b>/<b id="total-page"></b></p>
+    </section>
     <!--PREGUNTAS-->
-    <section class="test-question ctn tab"> 
+    <section class="test-question ctn tab" id="ancla"> 
       <!-- PRIMERA TANDA DE PREGUNTAS -->
       <div class="test-question__ctn tab__ctn">
         <div class="test-question__block input-ctm block-ctm">
@@ -158,39 +161,109 @@
             <p class="secondaryC">No estoy de acuerdo</p>
           </div>
         </div>
+        <div class="test-question__block input-ctm block-ctm">
+          <h4 class="tertiaryC">¿Orinas sentada?</h4>
+          <div class="input-ctm__block">
+            <p class="primaryC">Estoy de acuerdo</p>
+            <div class="input-ctm__item block-questions">
+              <input type="radio" name="8Quest" id="8option1" value="60">
+              <input type="radio" name="8Quest" id="8option2" value="50">
+              <input type="radio" name="8Quest" id="8option3" value="40">
+              <input type="radio" name="8Quest" id="8option4" value="0">
+              <input type="radio" name="8Quest" id="8option5" value="30">
+              <input type="radio" name="8Quest" id="8option6" value="20">
+              <input type="radio" name="8Quest" id="8option7" value="10">
+            </div>  
+            <p class="secondaryC">No estoy de acuerdo</p>
+          </div>
+        </div>
+        <div class="test-question__block input-ctm block-ctm">
+          <h4 class="tertiaryC">¿La palabra pudín te da risa?</h4>
+          <div class="input-ctm__block">
+            <p class="primaryC">Estoy de acuerdo</p>
+            <div class="input-ctm__item block-questions">
+              <input type="radio" name="9Quest" id="9option1" value="60">
+              <input type="radio" name="9Quest" id="9option2" value="50">
+              <input type="radio" name="9Quest" id="9option3" value="40">
+              <input type="radio" name="9Quest" id="9option4" value="0">
+              <input type="radio" name="9Quest" id="9option5" value="30">
+              <input type="radio" name="9Quest" id="9option6" value="20">
+              <input type="radio" name="9Quest" id="9option7" value="10">
+            </div>  
+            <p class="secondaryC">No estoy de acuerdo</p>
+          </div>
+        </div>
+        <div class="test-question__block input-ctm block-ctm">
+          <h4 class="tertiaryC">¿Anuel te fue infiel?</h4>
+          <div class="input-ctm__block">
+            <p class="primaryC">Estoy de acuerdo</p>
+            <div class="input-ctm__item block-questions">
+              <input type="radio" name="10Quest" id="10option1" value="60">
+              <input type="radio" name="10Quest" id="10option2" value="50">
+              <input type="radio" name="10Quest" id="10option3" value="40">
+              <input type="radio" name="10Quest" id="10option4" value="0">
+              <input type="radio" name="10Quest" id="10option5" value="30">
+              <input type="radio" name="10Quest" id="10option6" value="20">
+              <input type="radio" name="10Quest" id="10option7" value="10">
+            </div>  
+            <p class="secondaryC">No estoy de acuerdo</p>
+          </div>
+        </div>
       </div>
+      <!--ENVIÓ DE TEST Y CAMBIO DE TAB-->
       <div class="test-question__btn">
-        <button class="btn tab__btn" id="btn-send">Siguiente</button>
+        <a href="#ancla" class="btn tab__btn" id="btn-send">Siguiente</a>
       </div>
     </section>
 
     <section class="test-result block-ctm">
       <h3>Este es tu resultado:</h3>
       <div class="test-result__ctn ctn">
-        <article>
+        <article >
             <h3>Eres Max</h3>
             <img src="/img/max.jpeg" alt="">
             <p>Estas fachero</p>
-            <p>Jhosua es mejor</p>
-            <p>Jhosua es mejor</p>
+            <p>Te gusta la zanahoria</p>
+            <p>Eres orejón</p>
+            <p>Tienes una dueña muy wapa</p>
         </article>
-        <article >
+        <article>
             <h3>Eres el amor de mi vida</h3>
             <img src="/img/miamor.jpeg" alt="">
             <p>Te quiero mucho</p>
             <p>Eres lo mejor que tengo</p>
-            <p>Soy muy felix a tu lado</p>
+            <p>Soy muy feliz a tu lado</p>
             <p>Quiero vivir el resto de mi vida a tu lado</p>
         </article>
         <article>
             <h3>Felicitaciones eres karol G</h3>
             <img src="/img/karolg-result.jpg" alt="">
             <p>Anuel te fue infiel</p>
-            <p>Eres un bbcita</p>
+            <p>Eres una bbcita</p>
             <p>Te gusta cantar</p>
+            <p>Eres una bichota</p>
         </article>
       </div>
     </section>
+    <!--FOOTER-->
+    <footer class="footer">
+      <div class="footer__ctn">
+        <div class="footer__social">
+          <a href="#">
+            <img src="/img/facebook.svg" alt="">
+          </a>
+          <a href="#">
+            <img src="/img/twitter.svg" alt="">
+          </a>
+          <a href="#">
+            <img src="/img/github.svg" alt="">
+          </a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>Jhosua Penagos © 2023</p>
+      </div>
+    </footer>
 
     <script type="module" src="./sources/js/front.js"></script>
   </body>

@@ -19,7 +19,7 @@ const Questions = (()=>{
             const unifiqueArr = arrayPercent.reduce((a, b) => a + b, 0);
             const calcPercent = (100 * unifiqueArr) / hundredPercentSend;
             console.log(Math.trunc(calcPercent));
-            if(Math.trunc(calcPercent) > 1 && Math.trunc(calcPercent) < 33){
+            if(Math.trunc(calcPercent) >= 0 && Math.trunc(calcPercent) < 33){
                 getTestResult.classList.add('enable');
                 getTestCtn[0].classList.add('enable');
             }else if(Math.trunc(calcPercent) >= 34 && Math.trunc(calcPercent) < 66){
@@ -54,11 +54,16 @@ const Questions = (()=>{
     const QuestionsTab = ()=>{
         const getCtnTab = document.querySelectorAll('.tab__ctn');
         const getBtnTab = document.querySelector('.tab__btn');
+        const getTotalPage = document.querySelector('#total-page');
+        const getActualPage = document.querySelector('#actual-page');
         //SETEO DE ATRIBUTO TAB CONTENEDOR
         getCtnTab[0].classList.add('active');
         getCtnTab.forEach((data, indice)=>{
             data.setAttribute('data-tabCtn', indice);
         });
+        //SETEO DEL TOTAL DE PAGINAS A TEXTO DINAMICO Y PÁGINA ACTUAL
+        getTotalPage.textContent = getCtnTab.length;
+        getActualPage.textContent = 1;
         //SETEO DE ATRIBUTO TAB BOTON
         getBtnTab.setAttribute('data-count', 0);
         getBtnTab.addEventListener('click', ()=>{
@@ -79,6 +84,8 @@ const Questions = (()=>{
                         }
                     });
                 });
+                //PAGINADOR
+                getActualPage.textContent = suma + 1;
             }
             //VALIDAMOS SI ES EL CONTENEDOR FINAL
             if(getCtnTab.length == suma + 1){

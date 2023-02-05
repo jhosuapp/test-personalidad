@@ -36,15 +36,15 @@
         transition-property: right, top, left;
         text-align: center;
         &:nth-child(1){
-            left: -100%;
+            left: -110%;
             background-color: fun.color('succes');
         }
         &:nth-child(2){
-            top: -100%;
+            top: -120%;
         }
         &:nth-child(3){
             background-color: fun.color('succes');
-            right: -100%;
+            right: -110%;
         }
     }
 }
@@ -106,6 +106,7 @@
             width: 100%;
             max-height: 250px;
             object-fit: contain;
+            margin: 20px 0;
         }
     }
 }
