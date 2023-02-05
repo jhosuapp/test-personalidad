@@ -1,0 +1,101 @@
+@use '../base/functions' as fun;
+@use '../base/mixin' as mix;
+
+.input-ctm{
+    input[type='radio']{
+        appearance: none;
+        width: 45px;
+        height: 45px;
+        border-radius: 100px;
+        border: 3px solid fun.color('primary');
+        @include mix.flex;
+        transition: .3s ease background-color;
+        cursor: pointer;
+        &:checked{
+            background-color: fun.color('primary');
+        }
+        &:hover{
+            background-color: fun.color('primary');
+        }
+    }
+    &__block{
+        width: 100%;
+        @include mix.flex;
+        gap: 20px;
+    }
+    &__item{
+        @include mix.flex;
+        gap: 20px;
+        input[type="radio"]{
+            &:nth-child(2),
+            &:nth-child(6){
+                width: 40px;
+                height: 40px;
+            }
+            &:nth-child(3),
+            &:nth-child(5){
+                width: 35px;
+                height: 35px;
+            }
+            &:nth-child(4){
+                width: 30px;
+                height: 30px;
+                border-color: fun.color('text-color');
+                &:checked,
+                &:hover{
+                    background-color: fun.color('text-color');
+                }
+            }
+            &:nth-child(5),
+            &:nth-child(6),
+            &:nth-child(7){
+                border-color: fun.color('succes');
+                &:checked,
+                &:hover{
+                    background-color: fun.color('succes');
+                }
+            }
+        }
+    }
+}
+
+
+@media(max-width: fun.breakpoints('ipad-big')){
+    .input-ctm{
+        &__item{
+            gap: 15px;
+            width: 100%;
+            justify-content: space-between;
+            input[type="radio"]{
+                width: 40px;
+                height: 40px;
+                &:nth-child(2),
+                &:nth-child(6){
+                    width: 35px;
+                    height: 35px;
+                }
+                &:nth-child(3),
+                &:nth-child(5){
+                    width: 30px;
+                    height: 30px;
+                }
+                &:nth-child(4){
+                    width: 25px;
+                    height: 25px;
+                    border-color: fun.color('text-color');
+                    &:checked{
+                        background-color: fun.color('text-color');
+                    }
+                }
+                &:nth-child(5),
+                &:nth-child(6),
+                &:nth-child(7){
+                    border-color: fun.color('succes');
+                    &:checked{
+                        background-color: fun.color('succes');
+                    }
+                }
+            }
+        }
+    }
+}

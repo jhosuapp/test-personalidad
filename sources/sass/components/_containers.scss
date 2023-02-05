@@ -1,0 +1,9 @@
+.ctn{
+    width: 90%;
+    max-width: 1400px;
+    margin: auto;
+    position: relative;
+    &--fullwidth{
+        width: 100%;
+    }
+}

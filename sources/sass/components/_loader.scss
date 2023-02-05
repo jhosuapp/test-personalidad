@@ -1,0 +1,44 @@
+@use '../base/functions' as fun;
+@use '../base/mixin' as mix;
+
+.loader {
+    &-ctn{
+        position: fixed;
+        z-index: 100;
+        width: 100%;
+        height: 100vh;
+        left: 0;
+        top: 0;
+        @include mix.flex;
+        background-color: rgba(0, 0, 0, .95);
+        &.hidden{
+            transition: 1s 1.5s ease opacity;
+            opacity: 0;   
+            pointer-events: none;
+        }
+    }
+    transform: rotateZ(45deg);
+    perspective: 1000px;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    color: fun.color('white');
+    &:before,
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: inherit;
+        height: inherit;
+        border-radius: 50%;
+        transform: rotateX(70deg);
+        animation: 1s spin linear infinite;
+    }
+    &:after {
+        color: fun.color('primary');
+        transform: rotateY(70deg);
+        animation-delay: .4s;
+    }
+}
